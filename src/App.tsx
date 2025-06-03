@@ -1,5 +1,4 @@
-// src/App.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { MainLayout } from './components/layout/MainLayout';
 import { ChatList } from './features/ChatList';
 import { ChatWindow } from './components/chat/ChatWindow';
