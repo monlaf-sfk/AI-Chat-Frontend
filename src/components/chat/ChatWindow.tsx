@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { ArrowLeftIcon, EllipsisVerticalIcon } from '@heroicons/react/24/solid';
-import type { Chat, Message, User } from '../../types';
+import type { Chat, User } from '../../types';
 import { MessageItem } from '../../components/chat/MessageItem';
 import { ChatInput } from '../../components/chat/ChatInput';
 
