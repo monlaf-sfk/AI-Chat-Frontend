@@ -12,7 +12,7 @@ interface ChatWindowProps {
   searchTerm?: string;
 }
 
-export function ChatWindow({ chat, currentUser, onSendMessage, onGoBack, searchTerm }: ChatWindowProps) {
+export function ChatWindow({ chat, currentUser, onSendMessage, onGoBack }: ChatWindowProps) {
   const otherParticipant = chat.participants.find(p => p.id !== currentUser.id);
   const messagesContainerRef = useRef<HTMLDivElement>(null);  
   const messagesEndRef = useRef<HTMLDivElement>(null); 

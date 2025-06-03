@@ -25,15 +25,7 @@ function highlightText(text: string, highlight: string) {
 }
 
 export function ChatList({ chats, selectedChatId, onSelectChat, onCreateChat, currentUser, searchTerm, setSearchTerm }: ChatListProps) {
-  const filteredChats = chats.filter(chat => {
-    const otherParticipant = chat.participants.find(p => p.id !== currentUser.id);
-    const lastMessageText = chat.lastMessage?.text?.toLowerCase() || '';
-    return (
-      otherParticipant?.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      lastMessageText.includes(searchTerm.toLowerCase())
-    );
-  }).sort((a, b) => (b.lastMessage?.timestamp || 0) - (a.lastMessage?.timestamp || 0));
-
+ 
   return (
     <div className="flex flex-col h-full bg-white w-full max-w-full md:max-w-[400px] mx-auto shadow-lg rounded-lg md:rounded-none md:shadow-none transition-all duration-300">
       <div className="p-3 border-b border-telegram-border-color sticky top-0 bg-white z-10">
@@ -96,9 +88,6 @@ export function ChatList({ chats, selectedChatId, onSelectChat, onCreateChat, cu
             </p>
         )}
         {chats.map(chat => {
-          const otherParticipant = chat.participants.find(p => p.id !== currentUser.id);
-          const displayName = otherParticipant ? otherParticipant.name : 'Неизвестный чат';
-          const lastMessageText = chat.lastMessage?.text || 'Нет сообщений';
           return (
             <ChatListItem
               key={chat.id}
